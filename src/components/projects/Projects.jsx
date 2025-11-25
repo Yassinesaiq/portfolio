@@ -57,8 +57,8 @@ function Projects() {
   return (
     <section className="projects">
       <div className="top_section">
-        <h5>What Skills I Have</h5>
-        <h2>My Experience</h2>
+        <h5>My Recent Work</h5>
+        <h2>Portfolio</h2>
       </div>
       <div className="container projects_container">
         {portfolioData.map(({id,image,title,github,demo}) => (

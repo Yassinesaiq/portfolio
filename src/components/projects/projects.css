@@ -30,3 +30,19 @@
     margin-bottom: 15px;
 
 }
+
+/* Responsive */
+
+@media (max-width:1024px){
+    .projects_container .portfolio_item{
+        width:48%;
+
+    }
+}
+
+@media (max-width:600px){
+    .projects_container .portfolio_item{
+        width:100%;
+        
+    }
+}
