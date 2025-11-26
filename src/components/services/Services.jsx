@@ -15,7 +15,7 @@ function Services() {
         <div className="container container_services">
           <article className='Card'>
             <MdDesignServices className='icon'/>
-            <h3>Web MdDesign</h3>
+            <h3>Web Design</h3>
             <p className='text-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aut exercitationem libero ducimus? Quod error et in inventore, totam, quisquam enim, nesciunt rerum excepturi ipsa quibusdam tenetur est voluptates nobis!</p>
           </article>
           <article className='Card'>
