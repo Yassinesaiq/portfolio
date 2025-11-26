@@ -13,13 +13,15 @@
     --color-bg:#1f1f38;
     --color-bg-variant:#2c2c6c;
     --color-primary: #4db5ff;
-    --color-primary-varian:rbga(77,181,255,0.4);
+    --color-primary-variant:#4db5ff66;
     --color-white:#fff;
     --color-light:rgba(255,255,255,0.6);
     --transition: all 0.4s ease;
 
 }
-
+::-webkit-scrollbar{
+    display: none;
+}
 
 body{
     font-family: "Poppins", sans-serif;
@@ -29,6 +31,9 @@ body{
     background-image: url(assets/bg-texture.png);
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 .container{
     width:80%;

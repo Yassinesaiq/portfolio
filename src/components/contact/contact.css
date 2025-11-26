@@ -53,7 +53,7 @@
      padding: 1.5rem;
      border-radius: 0.5rem;
      background: transparent;
-     border: 2px solid var(--color-bg-variant);
+     border: 2px solid var(--color-primary-variant);
      resize: none;
      color: var(--color-white);
 }
@@ -61,4 +61,51 @@
 .contact_container form button{
     font-size: 18px;
     padding:14px 30px;
+}
+
+.contact_container form p {
+    background:  rgba(0,0,0,0.3);
+    backdrop-filter:blur(12px);
+    z-index: 10;
+    border: 2px solid var(--color-primary-variant);
+    font-size: 18px;
+    border-radius: 0.5rem;
+    padding:14px 30px 14px 10px;
+    display: flex;
+    flex-direction: row;
+    width: 69%;
+    gap: 0.5rem;
+    color: var(--color-white);
+    
+   
+} 
+.contact_container form .icon{
+    color: var(--color-primary);
+    font-size: 28px;
+    
+    
+}
+
+.contact_container form .message{
+    display: inline-flex;
+    gap :1.5rem;
+    
+}
+
+
+@media (max-width:1024px){
+    .contact_container{
+       grid-template-columns: 1fr;
+       gap: 2rem;
+         
+    }
+    
+}
+@media (max-width:600px){
+    .contact_container{
+       width: 90%;
+
+         
+    }
+    
 }

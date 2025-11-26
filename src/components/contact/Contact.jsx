@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{ useRef} from 'react'
 import './contact.css'
-
+import emailjs from '@emailjs/browser';
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
-
+import { useState,useEffect  } from "react";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 
 const ContactData = [
   {
@@ -36,6 +37,21 @@ const ContactData = [
 
 
 function Contact() {
+
+  const [visible, setVisible] = useState(false);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_kcej2eq', 'template_unzlvyk', form.current,'XBEde3OtCpmfKuatT')
+      .then(() => {
+        setVisible(true); 
+        setTimeout(() => setVisible(false), 3000); 
+      });
+  };
+
   return (
     <section className='contact' id='contact'>
 
@@ -56,15 +72,29 @@ function Contact() {
           ))}
         </div>
 
-        <form action="">
+        <form ref={form} onSubmit={sendEmail}>
           <input type="text" placeholder='Your Full Name' name='name' />
           <input type="email" placeholder='Your Email' name='email' />
-          <textarea rows={10} name="" id="" placeholder='Your Message'></textarea>
-          <button className='btn btn-primary'>Send Message</button>
+          <textarea rows={10} name="message" placeholder='Your Message'></textarea>
+
+          <div className="message"> {}
+            <button className='btn btn-primary'>Send Message</button>
+
+            {visible && (
+              <p>
+                <IoMdCheckmarkCircle className="icon" />
+                Message was sent Successfully!
+              </p>
+            )}
+          </div>
         </form>
       </div>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
+
+
+
+
